@@ -1,0 +1,109 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #f0f7f4;
+    font-family: 'Lato', sans-serif;
+}
+
+blockquote {
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+}
+
+h1, h2 {
+    font-family: 'Patua One', cursive;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+td.notdborder {
+    border-top: 0 !important;
+}
+
+.botmar {
+    margin-bottom: 5px;
+}
+
+th {
+    font-size: 1.2em;
+}
+
+tbody.altrows > tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tbody.altrows > tr:nth-child(odd){
+    background-color: #EFEFEF;
+}
+
+tbody.altrows > tr:nth-child(odd) > td.inheritrow {
+    background-color: #ffffff;
+}
+
+tbody.altrows > tr:nth-child(even) > td.inheritrow {
+    background-color: #EFEFEF;
+}
+
+fieldset.formsets div.form-group label.control-label {
+    opacity: .7;
+}
+fieldset.formsets div.form-group {
+    margin-left: 20px;
+}
+fieldset.formsets {
+    margin-bottom: 20px;
+}
+.clearfix {
+    overflow: auto;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.hymnnameleft {
+    float: left;
+    width: calc(100% - 70px);
+}
+.hymnnoright {
+    float: right;
+    width: 60px;
+}
+.navbar {
+    background-color: #581845;
+}
+
+

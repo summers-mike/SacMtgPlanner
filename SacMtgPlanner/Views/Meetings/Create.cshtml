@@ -1,0 +1,178 @@
+﻿@model SacMtgPlanner.Models.Meeting
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Plan a New Meeting</h2>
+
+@*<h4>Meeting</h4>*@
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+
+            <fieldset class="formsets">
+                <legend>Details</legend>
+
+                <div class="form-group">
+                    <label asp-for="Subject" class="control-label"></label>
+                    <input asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MeetingDate" class="control-label"></label>
+                    <input asp-for="MeetingDate" class="form-control" />
+                    <span asp-validation-for="MeetingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Conductor" class="control-label"></label>
+                    <input asp-for="Conductor" class="form-control" />
+                    <span asp-validation-for="Conductor" class="text-danger"></span>
+                </div>
+            </fieldset>
+
+
+
+            <fieldset class="formsets">
+                <legend>Prayers</legend>
+
+                <div class="form-group">
+                    <label asp-for="Invocation" class="control-label"></label>
+                    <input asp-for="Invocation" class="form-control" />
+                    <span asp-validation-for="Invocation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Benediction" class="control-label"></label>
+                    <input asp-for="Benediction" class="form-control" />
+                    <span asp-validation-for="Benediction" class="text-danger"></span>
+                </div>
+            </fieldset>
+
+            <fieldset class="formsets">
+                <legend>Speakers</legend>
+                <div class="form-group">
+                    <label asp-for="YouthSpeaker" class="control-label"></label>
+                    <input asp-for="YouthSpeaker" class="form-control" />
+                    <span asp-validation-for="YouthSpeaker" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SpeakerOne" class="control-label"></label>
+                    <input asp-for="SpeakerOne" class="form-control" />
+                    <span asp-validation-for="SpeakerOne" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SpeakerTwo" class="control-label"></label>
+                    <input asp-for="SpeakerTwo" class="form-control" />
+                    <span asp-validation-for="SpeakerTwo" class="text-danger"></span>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="formsets">
+                <legend>Music</legend>
+
+                @*<div class="form-group">
+                <label asp-for="OpeningHymnName" class="control-label"></label>
+                <input asp-for="OpeningHymnName" class="form-control" />
+                <span asp-validation-for="OpeningHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpeningHymnNumber" class="control-label"></label>
+                <input asp-for="OpeningHymnNumber" class="form-control" />
+                <span asp-validation-for="OpeningHymnNumber" class="text-danger"></span>
+            </div>*@
+
+
+                <div class="form-group clearfix">
+                    <div class="hymnnameleft">
+                        <label asp-for="OpeningHymnName" class="control-label"></label>
+                        <input asp-for="OpeningHymnName" class="form-control" />
+                        <span asp-validation-for="OpeningHymnName" class="text-danger"></span>
+                        <span asp-validation-for="OpeningHymnNumber" class="text-danger"></span>
+                    </div>
+                    <div class="hymnnoright">
+                        <label class="control-label">No.</label>
+                        <input asp-for="OpeningHymnNumber" class="form-control" />
+
+                    </div>
+                </div>
+
+
+
+
+
+                @*<div class="form-group">
+                <label asp-for="SacHymnName" class="control-label"></label>
+                <input asp-for="SacHymnName" class="form-control" />
+                <span asp-validation-for="SacHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SacHymnNumber" class="control-label"></label>
+                <input asp-for="SacHymnNumber" class="form-control" />
+                <span asp-validation-for="SacHymnNumber" class="text-danger"></span>
+            </div>*@
+
+
+                <div class="form-group clearfix">
+                    <div class="hymnnameleft">
+                        <label asp-for="SacHymnName" class="control-label"></label>
+                        <input asp-for="SacHymnName" class="form-control" />
+                        <span asp-validation-for="SacHymnName" class="text-danger"></span>
+                        <span asp-validation-for="SacHymnNumber" class="text-danger"></span>
+                    </div>
+                    <div class="hymnnoright">
+                        <label class="control-label">No.</label>
+                        <input asp-for="SacHymnNumber" class="form-control" />
+
+                    </div>
+                </div>
+
+
+                @*<div class="form-group">
+                <label asp-for="ClosingHymnName" class="control-label"></label>
+                <input asp-for="ClosingHymnName" class="form-control" />
+                <span asp-validation-for="ClosingHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingHymnNumber" class="control-label"></label>
+                <input asp-for="ClosingHymnNumber" class="form-control" />
+                <span asp-validation-for="ClosingHymnNumber" class="text-danger"></span>
+            </div>*@
+
+
+                <div class="form-group clearfix">
+                    <div class="hymnnameleft">
+                        <label asp-for="ClosingHymnName" class="control-label"></label>
+                        <input asp-for="ClosingHymnName" class="form-control" />
+                        <span asp-validation-for="ClosingHymnName" class="text-danger"></span>
+                        <span asp-validation-for="ClosingHymnNumber" class="text-danger"></span>
+                    </div>
+                    <div class="hymnnoright">
+                        <label class="control-label">No.</label>
+                        <input asp-for="ClosingHymnNumber" class="form-control" />
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info btn-md">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

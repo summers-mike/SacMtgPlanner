@@ -1,0 +1,137 @@
+﻿<!-- model IEnumerable<SacMtgPlanner.Models.Meeting> -->
+@model SacMtgPlanner.Models.MeetingConductorViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Sacrament Meetings List</h2>
+
+<p>
+    <a asp-action="Create"class="btn btn-success btn-md">Plan New Meeting</a>
+</p>
+
+<form asp-controller="Meetings" asp-action="Index" method="get">
+    <p>
+        Conductor: <select asp-for="meetingConductor" asp-items="Model.conductors">
+            <option value="">All</option>
+        </select>
+
+        Search by Subject: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.meetings[0].Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meetings[0].MeetingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meetings[0].Conductor)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.meetings[0].Invocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meetings[0].Benediction)
+        </th>*@
+            <th>
+                Prayers
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.meetings[0].YouthSpeaker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meetings[0].SpeakerOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meetings[0].SpeakerTwo)
+        </th>*@
+            <th>
+                Speakers
+            </th>
+
+            @*<th>
+                @Html.DisplayNameFor(model => model.meetings[0].OpeningHymnName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.meetings[0].SacHymnName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.meetings[0].ClosingHymnName)
+            </th>*@
+
+            <th>
+                Hymns
+            </th>
+
+            <th>@* empty for controls *@</th>
+        </tr>
+    </thead>
+    <tbody class="altrows">
+        @foreach (var item in Model.meetings)
+        {
+        <tr>
+            <td rowspan="3">
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td rowspan="3">
+                @Html.DisplayFor(modelItem => item.MeetingDate)
+            </td>
+            <td rowspan="3">
+                @Html.DisplayFor(modelItem => item.Conductor)
+            </td>
+            <td>
+                <strong>Invocation:</strong> @Html.DisplayFor(modelItem => item.Invocation)
+            </td>
+
+            <td>
+                <strong>Youth:</strong> @Html.DisplayFor(modelItem => item.YouthSpeaker)
+            </td>
+            
+
+            <td>
+                <strong>Opening:</strong> @Html.DisplayFor(modelItem => item.OpeningHymnName)
+                (#@Html.DisplayFor(modelItem => item.OpeningHymnNumber))
+            </td>
+
+            
+            <td rowspan="3">
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary btn-xs botmar">Edit</a><br/>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-warning btn-xs botmar">Details</a><br/>
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger btn-xs botmar">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="notdborder inheritrow">
+                <strong>Benediction:</strong> @Html.DisplayFor(modelItem => item.Benediction)
+            </td>
+            <td class="notdborder inheritrow">
+                <strong>First:</strong> @Html.DisplayFor(modelItem => item.SpeakerOne)
+            </td>
+            <td class="notdborder inheritrow">
+                <strong>Sacrament:</strong> @Html.DisplayFor(modelItem => item.SacHymnName)
+                (#@Html.DisplayFor(modelItem => item.SacHymnNumber))
+            </td>
+        </tr>
+
+        <tr>
+            <td class="notdborder">@* empty 3rd spot under prayers *@</td>
+            <td class="notdborder">
+                <strong>Second:</strong> @Html.DisplayFor(modelItem => item.SpeakerTwo)
+            </td>
+            <td class="notdborder">
+                <strong>Closing:</strong> @Html.DisplayFor(modelItem => item.ClosingHymnName)
+                (#@Html.DisplayFor(modelItem => item.ClosingHymnNumber))
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

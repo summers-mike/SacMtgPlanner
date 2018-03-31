@@ -1,0 +1,105 @@
+﻿@model SacMtgPlanner.Models.Meeting
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Meeting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MeetingDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Conductor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Conductor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Benediction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Benediction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.YouthSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.YouthSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpeakerOne)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpeakerOne)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpeakerTwo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpeakerTwo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningHymnNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OpeningHymnNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningHymnName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OpeningHymnName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacHymnNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacHymnNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacHymnName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacHymnName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHymnNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHymnNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHymnName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHymnName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger btn-lg" /><br /><br />
+        <a asp-action="Index" class="btn btn-info btn-md">Back to List</a>
+    </form>
+</div>
